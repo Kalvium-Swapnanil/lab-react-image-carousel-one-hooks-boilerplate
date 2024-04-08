@@ -1,1 +1,45 @@
 /* write down the css for Carousel in this file */
+.card{
+    height: 100vh;
+    width: 800px;
+    border: solid black;
+}
+.left-arrow{
+    left: 0;
+}
+.right-arrow{
+    right:0;
+}
+.arrow{
+    width: 40px;
+    height: inherit;
+    background-color: rgb(64, 59, 59);
+    color: antiquewhite;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.caption{
+    padding: 20px 40px 20px 40px;
+    border-radius: 12px;
+    position: absolute;
+    bottom: 200px;
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.605);
+}
+.title{
+    border-radius: 12px;
+    padding: 20px 40px 20px 40px;
+    position: absolute;
+    top: 120px;
+    font-size: 50px;
+    background-color: rgba(255, 255, 255, 0.605);
+}
+.image{
+    width: inherit;
+    object-fit: cover;
+    height: inherit;
+}
+
