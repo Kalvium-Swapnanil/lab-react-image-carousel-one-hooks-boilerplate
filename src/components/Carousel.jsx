@@ -1,46 +1,34 @@
 import React, { useState } from "react";
 import "./Carousel.css";
 import { images } from "../data/CarouselData";
-
-// you can research - how to use material ui
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-// complete the function below:
 function Carousel() {
-    const[data,setData]=useState(0)
-    const{title,subtitle,img}=images[data]
-    const next=()=>{
-        if(data==images.length-1){
-            setData(0)
-        }
-        else{
-        setData(data+1)
-        }
-    }
-    const prev=()=>{
-        if(data==0){
-            setData(images.length-1)
-        }
-        else{
-            setData(data-1)
-        }
-    }
-    return(
-        <>
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const { title, subtitle, img } = images[currentIndex];
+
+    const next = () => {
+        setCurrentIndex(currentIndex === images.length - 1 ? 0 : currentIndex + 1);
+    };
+
+    const prev = () => {
+        setCurrentIndex(currentIndex === 0 ? images.length - 1 : currentIndex - 1);
+    };
+
+    return (
         <div className="card flex">
             <div onClick={prev} className="left-arrow arrow flex">
-                <ArrowBackIosIcon/>
+                <ArrowBackIosIcon />
             </div>
-                <h2 className="title">{title}</h2>
-                <img className="image" src={img} alt="" />
-                <h4 className="caption">{subtitle}</h4>
+            <h2 className="title">{title}</h2>
+            <img className="image" src={img} alt="" />
+            <h4 className="caption">{subtitle}</h4>
             <div onClick={next} className="right-arrow arrow flex">
-                <ArrowForwardIosIcon/>
+                <ArrowForwardIosIcon />
             </div>
         </div>
-        </>
-    )
+    );
 }
 
 export default Carousel;
